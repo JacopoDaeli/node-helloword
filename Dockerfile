@@ -16,4 +16,4 @@ RUN npm install
 # Expose port app is running on
 EXPOSE 8080
 
-CMD ["node", "--use_strict", index.js"]
+CMD ["node", "--use_strict", "index.js"]
