@@ -2,6 +2,11 @@
 
 export APP_NAME=node-helloword
 
+if [ "$APP_NAME" = "" ]; then
+  echo "APP_NAME must be set."
+  exit;
+fi
+
 ./login $1
 
 if [ "$1" = "prd" ]; then
