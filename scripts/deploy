@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export APP_NAME=node-helloword
+
+./login $1
+
+if [ "$1" = "prd" ]; then
+  echo "Deploying to production"
+  git push deis-prd master
+else
+  echo "Deploying to staging"
+  git push deis-stg development
+fi
+
+# Logout
+echo "LOGOUT"
+deis logout
